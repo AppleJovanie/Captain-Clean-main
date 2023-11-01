@@ -9,19 +9,19 @@ public class Proceed : MonoBehaviour
    
     public void ProceedAfterBoss()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene(3);
     }
     public void ProceedAfterImpetaigor()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(5);
     }
     public void ProceedAfterGalisorous()
     {
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene(7);
     }
     public void ProceedAfterAlifungor()
     {
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene(9);
     }
     public void ProceedAfterCavityBoss()
     {

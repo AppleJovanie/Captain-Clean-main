@@ -15,26 +15,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Boss/BossLevel1.unity
     guid: ee2bf4c2cbf46304da8f26b5943b37e4
   - enabled: 1
-    path: Assets/Scenes/Levels/Level2.unity
-    guid: 3e8728a58f4ef1544bf75105947b2e6d
+    path: Assets/Scenes/Levels/RealLevels/TestLevel2.unity
+    guid: e71e67bec7119a5488f42540f57491e2
   - enabled: 1
     path: Assets/Scenes/Levels/Boss/BossLevel2.unity
     guid: faa93f846d6397943a972d56f22911d9
   - enabled: 1
-    path: Assets/Scenes/Levels/Level3.unity
-    guid: e06b10c3d0bec1b4387c549217a95912
+    path: Assets/Scenes/Levels/RealLevels/TestLevel3.unity
+    guid: 6b939c008c6757e4796b9a778eaebb0f
   - enabled: 1
     path: Assets/Scenes/Levels/Boss/BossLevel3.unity
     guid: 5e748dad02cdded45ba888d5f0806643
   - enabled: 1
-    path: Assets/Scenes/Levels/Level4.unity
-    guid: 211c2cf4b6e812a4bacb80feb14839a6
+    path: Assets/Scenes/Levels/RealLevels/TestLevel4.unity
+    guid: f6db9843162ecb044b3313cee91dd066
   - enabled: 1
     path: Assets/Scenes/Levels/Boss/BossLevel4.unity
     guid: 81210392d46b8b54f85c45715994a083
   - enabled: 1
-    path: Assets/Scenes/Levels/Level5.unity
-    guid: 742a5c60906f8614ea36093f7229e999
+    path: Assets/Scenes/Levels/RealLevels/TestLevel5.unity
+    guid: 4f2636f1b4cae9c4fbd607b1b4e69605
   - enabled: 1
     path: Assets/Scenes/Levels/Boss/BossLevel5.unity
     guid: 1e7ff7cf586d58345a365ca780fbba1b
