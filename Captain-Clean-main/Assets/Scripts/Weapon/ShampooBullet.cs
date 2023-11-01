@@ -22,8 +22,9 @@ public class ShampooBullet : MonoBehaviour
         // Normal Enemy In Levels
         if (ArrayContains(NormalEnemies, normalEnemies))
         {
-            ScoreScript.scoreValue += 10;
+           
             Destroy(collision.gameObject);
+            ScoreScript.scoreValue += 10;
         }
 
         // Boss for Soap Bullet

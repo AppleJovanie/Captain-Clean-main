@@ -16,33 +16,13 @@ public class MovementChar : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource running;
     private bool isRunning = false;
-    public static MovementChar Instance;
 
     private Vector3 respawnPoint;
     public GameObject fallDetector;
     public GameObject youWon;
     private enum MovementState {idle, running, jumping ,falling }
     MovementState state;
-    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
-
-    public Vector3 GetPlayerPosition()
-    {
-        return transform.position;
-    }
-
-    public void SetPlayerPosition(Vector3 position)
-    {
-        transform.position = position;
-    }
+    
 
     void Start()
     {
@@ -75,8 +55,9 @@ public class MovementChar : MonoBehaviour
             transform.position = respawnPoint;
         }
         else if (collision.tag == "Checkpoint")
-        {    
-       
+        {
+            PlayerPrefs.SetInt("CheckpointReached", 1);
+            PlayerPrefs.Save();
             respawnPoint = transform.position;
         }
       
