@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Switch : MonoBehaviour
 {
@@ -40,8 +41,8 @@ public class Switch : MonoBehaviour
         {
             background[i].gameObject.SetActive(false);
             background[index].gameObject.SetActive(true);
+
         }
-        Debug.Log(index);
     }
 
     public void Previous()
@@ -55,6 +56,4 @@ public class Switch : MonoBehaviour
         }
         Debug.Log(index);
     }
-
-
 }

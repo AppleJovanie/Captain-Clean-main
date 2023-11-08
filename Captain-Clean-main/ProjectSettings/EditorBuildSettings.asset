@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 279059befe3d624429c598aa4b5eef07
   - enabled: 1
+    path: Assets/Scenes/Levels/RealLevels/Story.unity
+    guid: ae1e97e569231ff49a4f7b767478f017
+  - enabled: 1
     path: Assets/Scenes/Levels/RealLevels/Level1.unity
     guid: d511aaf7e27787e43952c72439d571e8
   - enabled: 1
@@ -25,7 +28,7 @@ EditorBuildSettings:
     guid: 6b939c008c6757e4796b9a778eaebb0f
   - enabled: 1
     path: Assets/Scenes/Levels/Boss/BossLevel3.unity
-    guid: 5e748dad02cdded45ba888d5f0806643
+    guid: 0ce676b497a7f8749bf1c04a3c8b4c15
   - enabled: 1
     path: Assets/Scenes/Levels/RealLevels/TestLevel4.unity
     guid: f6db9843162ecb044b3313cee91dd066
