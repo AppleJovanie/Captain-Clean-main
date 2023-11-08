@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Minigame.unity
     guid: 0840f9d1379df584fae221a40a040f8d
+  - enabled: 1
+    path: Assets/Scenes/Levels/RealLevels/StoryEnd.unity
+    guid: b5ca7109e0bd66b46b30887b1b511ed0
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7eb5dc0a96edfdf48839bf82f2497e66, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 9e97176eba9ad2d4b81780ccb7774114, type: 2}

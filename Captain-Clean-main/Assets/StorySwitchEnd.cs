@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StorySwitch : MonoBehaviour
+public class StorySwitchEnd : MonoBehaviour
 {
-
     public GameObject[] background;
     int index;
     [SerializeField] private AudioSource pressed;
@@ -39,17 +38,12 @@ public class StorySwitch : MonoBehaviour
         index += 1;
         bool sceneChecker = index == background.Length;
 
-        //for (int i = 0; i < background.Length; i++)
-        //{
-        //    background[i].gameObject.SetActive(false);
-        //    background[index].gameObject.SetActive(true);
 
-        //}
 
-        if (index == background.Length) 
+        if (index == background.Length)
         {
             //Debug.Log(sceneChecker);
-            SceneManager.LoadScene(2);        
+            SceneManager.LoadScene(0);
         }
         else
         {
@@ -59,10 +53,6 @@ public class StorySwitch : MonoBehaviour
         Debug.Log(index);
     }
 
-    public void Skip()
-    {
-        SceneManager.LoadScene(2);
-    }
-
    
+
 }
