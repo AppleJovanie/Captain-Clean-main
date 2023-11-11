@@ -15,7 +15,7 @@ public class SnapController : MonoBehaviour
     private bool shampooMatched = false;
     private bool soapMatched = false;
     private bool toothbrushMatched = false;
-    private bool allCorrectlyPlaced = false;
+    public bool allCorrectlyPlaced = false;
 
 
     void Start()

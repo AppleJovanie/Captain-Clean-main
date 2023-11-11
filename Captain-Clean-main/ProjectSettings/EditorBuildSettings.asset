@@ -48,6 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/RealLevels/StoryEnd.unity
     guid: b5ca7109e0bd66b46b30887b1b511ed0
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 5baf05bdecc76e04ba61430d524e855e, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7eb5dc0a96edfdf48839bf82f2497e66, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 9e97176eba9ad2d4b81780ccb7774114, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5f4761061db512041a7ff3f7a9847849, type: 2}

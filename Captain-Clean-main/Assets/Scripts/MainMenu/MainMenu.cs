@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject continueButton;
-    private bool checkpointReached = false;
+   // private bool checkpointReached = false;
     private int sceneToContinue;
     private void Start()
     {

@@ -15,7 +15,7 @@ public class MovementChar : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource running;
-    private bool isRunning = false;
+    public bool isRunning = false;
 
     private Vector3 respawnPoint;
     public GameObject fallDetector;
