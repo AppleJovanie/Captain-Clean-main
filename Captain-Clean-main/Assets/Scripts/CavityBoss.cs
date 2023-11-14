@@ -17,6 +17,8 @@ public class CavityBoss : MonoBehaviour
     private bool isDead = false; // Flag to track if the boss is already dead
     public GameObject youWonCanvas;
 
+    private Vector3 respawnPoint;
+
     public int bulletsToDestroyBoss = 15; // Number of bullets required to destroy the boss
     [SerializeField] private FloatingHealthBar healthBar;
 
@@ -30,6 +32,7 @@ public class CavityBoss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
+        respawnPoint = transform.position;
 
         // Find the player's transform based on their tag (assuming the player has the "Player" tag)
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -81,6 +84,14 @@ public class CavityBoss : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Respawn();
+        }
+    }
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
     }
 
     private void Die()

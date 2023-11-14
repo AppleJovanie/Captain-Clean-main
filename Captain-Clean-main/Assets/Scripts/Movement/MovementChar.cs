@@ -18,6 +18,7 @@ public class MovementChar : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource running;
     [SerializeField] private AudioSource die;
+    [SerializeField] private AudioSource checkPoint;
     public bool isRunning = false;
     private bool canJump = true;
 
@@ -66,6 +67,7 @@ public class MovementChar : MonoBehaviour
         }
         else if (collision.tag == "Checkpoint")
         {
+            checkPoint.Play();
             PlayerPrefs.SetInt("CheckpointReached", 1);
             PlayerPrefs.Save();
             respawnPoint = transform.position;

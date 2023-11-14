@@ -5,8 +5,7 @@ using UnityEngine;
 public class PanelOpener : MonoBehaviour
 {
     public GameObject panel;
-    [SerializeField] private AudioSource levelIntro;
-
+  
 
     public void OpenPanel()
     {
@@ -19,7 +18,7 @@ public class PanelOpener : MonoBehaviour
 
     public void ClosePanel()
     {
-        levelIntro.Play();
+        
         if (panel != null)
         {
            
