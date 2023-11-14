@@ -16,6 +16,7 @@ public class KutonisBoss : MonoBehaviour
     private int bulletsHitCount = 0; // Number of bullets that hit the boss
     private bool isDead = false; // Flag to track if the boss is already dead
     public GameObject youWonCanvas;
+    private Vector3 respawnPoint;
 
     [SerializeField] public int bulletsToDestroyBoss = 15; // Number of bullets required to destroy the boss
     [SerializeField] private FloatingHealthBar healthBar;
@@ -30,6 +31,7 @@ public class KutonisBoss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
+        respawnPoint = transform.position;
 
         // Find the player's transform based on their tag (assuming the player has the "Player" tag)
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -81,8 +83,15 @@ public class KutonisBoss : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Respawn();
+        }
     }
-
+    private void Respawn()
+    {       
+        transform.position = respawnPoint;
+    }
     private void Die()
     {
         // Add any logic you want to handle the boss's death here

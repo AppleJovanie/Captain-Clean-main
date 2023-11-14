@@ -20,6 +20,8 @@ public class Alifungor : MonoBehaviour
     [SerializeField] private int bulletsToDestroyBoss = 15; // Number of bullets required to destroy the boss
     [SerializeField] private FloatingHealthBar healthBar;
 
+    private Vector3 respawnPoint;
+
 
     public void Awake()
     {
@@ -31,6 +33,7 @@ public class Alifungor : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
         healthBar.SetMaxHealth(bulletsToDestroyBoss);
+        respawnPoint = transform.position;
 
         // Find the player's transform based on their tag (assuming the player has the "Player" tag)
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -83,8 +86,15 @@ public class Alifungor : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Respawn();
+        }
     }
-
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+    }
     private void Die()
     {
         // Add any logic you want to handle the boss's death here

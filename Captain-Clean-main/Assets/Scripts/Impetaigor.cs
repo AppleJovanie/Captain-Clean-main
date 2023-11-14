@@ -19,6 +19,7 @@ public class Impetaigor : MonoBehaviour
 
     [SerializeField] public int bulletsToDestroyBoss = 15; // Number of bullets required to destroy the boss
     [SerializeField] private FloatingHealthBar healthBar;
+    private Vector3 respawnPoint;
 
     public void Awake()
     {
@@ -30,6 +31,7 @@ public class Impetaigor : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
+        respawnPoint = transform.position;
 
         // Find the player's transform based on their tag (assuming the player has the "Player" tag)
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
@@ -81,6 +83,14 @@ public class Impetaigor : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Respawn();
+        }
+    }
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
     }
 
     private void Die()

@@ -36,6 +36,9 @@ TagManager:
   - ToothBrush
   - Soap1
   - Soap2
+  - Ground
+  - Terrain
+  - FallSideDetector
   layers:
   - Default
   - TransparentFX

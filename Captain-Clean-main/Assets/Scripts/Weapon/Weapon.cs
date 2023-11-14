@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
     public Transform shootingPointer;
     public GameObject[] shootingObjects; // An array of different bullets or shooting objects
-    public float bulletSpeed = 3;
+    public float bulletSpeed = 6;
     public float cooldownDuration = 1.0f;
     private float lastShotTime;
     [SerializeField] private AudioSource shoot;

@@ -10,34 +10,49 @@ public class SnapController : MonoBehaviour
     public List<Draggable> draggableObjects;
     public float snapRange = 0.5f;
     public GameObject youWonPanel;
-    //public GameObject youLosePanel;
+    public GameObject youLosePanel;
 
     private bool shampooMatched = false;
     private bool soapMatched = false;
+    private bool soapMatchedAthleteFoot = false;
+    private bool soapMatchedImpetigo = false;
     private bool toothbrushMatched = false;
-    public bool allCorrectlyPlaced = false;
+    private bool allCorrectlyPlaced = false;
 
+    private int counter;
+    private string lastMovedTag;
+
+    private bool isLocked = false;
 
     void Start()
     {
         foreach (Draggable draggable in draggableObjects)
         {
-            draggable.dragEnded = OnDragEnded;
+            draggable.dragEnded = OnDragEnded;     
         }
     }
 
+
     private void OnDragEnded(Draggable draggable)
     {
-
+        Debug.Log(counter);
+       
         float closestDistance = snapRange;
         Transform closestSnapPoint = null;
-        //bool incorrectPlacement = false;
+        bool incorrectPlacement = false;
 
-        foreach (Transform snapPoint in snapPoints)
+        if (counter < 0) {
+            counter = 0;
+        }
+
+        foreach (Transform snapPoint in snapPoints) 
         {
+           
             float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.localPosition);
             if (currentDistance <= closestDistance)
             {
+
+                counter++;
                 closestSnapPoint = snapPoint;
                 closestDistance = currentDistance;
             }
@@ -47,48 +62,76 @@ public class SnapController : MonoBehaviour
         {
             draggable.transform.localPosition = closestSnapPoint.localPosition;
 
+            Collider2D collider = draggable.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+
             if (draggable.CompareTag("Shampoo") && closestSnapPoint.CompareTag("HeadLice"))
             {
-                shampooMatched = true;
+                    shampooMatched = true;
+                
+              
+
             }
             else if (draggable.CompareTag("Soap") && closestSnapPoint.CompareTag("AthleteFoot"))
             {
-                soapMatched = true;
+                
+                    soapMatchedAthleteFoot = true;
+               
             }
             else if (draggable.CompareTag("Soap1") && closestSnapPoint.CompareTag("Impetigo"))
             {
-                soapMatched = true;
+              
+                    soapMatchedImpetigo = true;
+               
             }
             else if (draggable.CompareTag("Soap2") && closestSnapPoint.CompareTag("Scabies"))
             {
-                soapMatched = true;
+               
+                    soapMatched = true;
+               
             }
             else if (draggable.CompareTag("ToothBrush") && closestSnapPoint.CompareTag("Cavity"))
             {
-                toothbrushMatched = true;
+              
+                    toothbrushMatched = true;
+              
             }
         }
-        //else
-        //{
-        //    // If any object is incorrectly placed, set the flag to true
-        //    incorrectPlacement = true;
-        //}
-
-        //// Check if all items are incorrectly placed
-        //if (!shampooMatched && !soapMatched && !toothbrushMatched && incorrectPlacement)
-        //{
-        //    allCorrectlyPlaced = false;
-        //    youLosePanel.SetActive(true);
-        //}
-        else if (shampooMatched && soapMatched && toothbrushMatched)
+        else
         {
-            allCorrectlyPlaced = true;
-            youWonPanel.SetActive(true);
+            // If any object is incorrectly placed, set the flag to true
+            incorrectPlacement = true;
+        }
+
+        // Check if all items are incorrectly placed
+        if (counter == 5)
+        {
+            if (shampooMatched && soapMatched && toothbrushMatched && soapMatchedAthleteFoot && soapMatchedImpetigo)
+            {
+                allCorrectlyPlaced = true;
+                youWonPanel.SetActive(true);
+             
+            }
+            else
+            {
+                youLosePanel.SetActive(true);
+            }
+
+        }
+        if (isLocked)
+        {
+            
         }
     }
-
-    public void Menu()
+    public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(12);
     }
-}
+    public void Menu()
+        {
+            SceneManager.LoadScene(0);
+        }
+    }

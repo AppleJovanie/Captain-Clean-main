@@ -7,7 +7,7 @@ public class Draggable : MonoBehaviour
 {
     public delegate void DragEndedDelegate(Draggable draggableObject); 
     public DragEndedDelegate dragEnded;
-    private bool isDrag = false;
+    public bool isDrag = false;
     private Vector3 mouseDragPosition;
     private Vector3 spriteDragPosition;  
     private void OnMouseDown()
