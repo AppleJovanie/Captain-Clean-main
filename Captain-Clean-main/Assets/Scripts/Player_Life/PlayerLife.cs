@@ -14,6 +14,8 @@ public class PlayerLife : MonoBehaviour
     public string[] Bosses = { "BossLice", "Impetaigor", "Galisorous", "Alifungor", "CavityBoss" };
     public string[] trapses = { "Trap" };
     [SerializeField] private AudioSource die;
+    private CoinCollectorScript coinCollectorScript;
+
 
     private bool isImmune = false;
 
@@ -23,6 +25,7 @@ public class PlayerLife : MonoBehaviour
         respawnPoint = transform.position;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        coinCollectorScript = FindObjectOfType<CoinCollectorScript>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,8 +79,10 @@ public class PlayerLife : MonoBehaviour
 
     private void Respawn()
     {
-        StartCoroutine(BecomeImmune(2f));
+        StartCoroutine(BecomeImmune(1f));
         transform.position = respawnPoint;
+
+        coinCollectorScript.HandleRespawn();
     }
 
     private void RestartGame()

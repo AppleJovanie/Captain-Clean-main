@@ -39,6 +39,7 @@ TagManager:
   - Ground
   - Terrain
   - FallSideDetector
+  - Coin
   layers:
   - Default
   - TransparentFX

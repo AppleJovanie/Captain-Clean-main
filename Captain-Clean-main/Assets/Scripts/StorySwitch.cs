@@ -39,12 +39,6 @@ public class StorySwitch : MonoBehaviour
         index += 1;
         bool sceneChecker = index == background.Length;
 
-        //for (int i = 0; i < background.Length; i++)
-        //{
-        //    background[i].gameObject.SetActive(false);
-        //    background[index].gameObject.SetActive(true);
-
-        //}
 
         if (index == background.Length) 
         {

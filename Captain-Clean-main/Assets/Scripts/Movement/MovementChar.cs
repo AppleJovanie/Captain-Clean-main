@@ -57,7 +57,8 @@ public class MovementChar : MonoBehaviour
             moveRight = false;
             canJump = false;
         }
-        {    
+        { 
+            
         }
 
         if (collision.tag == "FallDetector")
@@ -72,6 +73,7 @@ public class MovementChar : MonoBehaviour
             PlayerPrefs.Save();
             respawnPoint = transform.position;
         }
+     
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -219,36 +221,3 @@ public class MovementChar : MonoBehaviour
         
     }
 }
-
-
-
-//public void pointerDownLeft()
-//{
-//    running.Play();
-//    transform.rotation = Quaternion.Euler(0, 180, 0);
-//    moveLeft = true;
-//    state = MovementState.running; // Start running animation when moving left
-
-//}
-
-//public void pointerUpLeft()
-//{
-//    moveLeft = false;
-//    CheckMovementState();// Stop running animation when not moving left
-//}
-
-//Movement Right is True
-//public void pointerDownRight()
-//{
-//    running.Play();
-//    transform.rotation = Quaternion.Euler(0, 0, 0);
-//    moveRight = true;      
-//    state = MovementState.running;    
-//}
-
-////Movement Right Has Stopped
-//public void pointerUpRight()
-//{
-//    moveRight = false;
-//    CheckMovementState(); // Stop running animation when not moving right
-//}

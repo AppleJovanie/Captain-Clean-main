@@ -20,6 +20,7 @@ public class KutonisBoss : MonoBehaviour
 
     [SerializeField] public int bulletsToDestroyBoss = 15; // Number of bullets required to destroy the boss
     [SerializeField] private FloatingHealthBar healthBar;
+   
 
     public void Awake()
     {

@@ -1663,8 +1663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 327}
-  m_SizeDelta: {x: 631.2173, y: 59.8394}
+  m_AnchoredPosition: {x: 21, y: 333}
+  m_SizeDelta: {x: 1026.7411, y: 76.3196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956433737
 MonoBehaviour:
@@ -1699,7 +1699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Match the Correct Object '
+  m_Text: Place the Correct Object in their corresponding items
 --- !u!222 &956433738
 CanvasRenderer:
   m_ObjectHideFlags: 0

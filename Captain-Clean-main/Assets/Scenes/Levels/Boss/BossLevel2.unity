@@ -41376,7 +41376,7 @@ PrefabInstance:
       objectReference: {fileID: 1448777884}
     - target: {fileID: 3752916073499997092, guid: 8909ea5d32371b34d8617b6e10d67af1, type: 3}
       propertyPath: jumpSpeed
-      value: 12
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 3752916073499997092, guid: 8909ea5d32371b34d8617b6e10d67af1, type: 3}
       propertyPath: fallDetector
