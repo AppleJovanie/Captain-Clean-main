@@ -39,7 +39,7 @@ public class SnapController : MonoBehaviour
        
         float closestDistance = snapRange;
         Transform closestSnapPoint = null;
-        bool incorrectPlacement = false;
+          bool incorrectPlacement = false;
 
         if (counter < 0) {
             counter = 0;
@@ -132,6 +132,6 @@ public class SnapController : MonoBehaviour
     }
     public void Menu()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(13);
         }
     }

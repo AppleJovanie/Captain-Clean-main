@@ -551,7 +551,6 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 3226821586993769766}
   running: {fileID: 6292724649347775792}
   die: {fileID: 0}
-  checkPoint: {fileID: 1901005133579865990}
   isRunning: 0
   fallDetector: {fileID: 0}
 --- !u!114 &5351934304564737791
@@ -581,6 +580,7 @@ MonoBehaviour:
   trapses:
   - Trap
   die: {fileID: 9147953373005803319}
+  checkPoint: {fileID: 1901005133579865990}
 --- !u!114 &3235003086992224149
 MonoBehaviour:
   m_ObjectHideFlags: 0

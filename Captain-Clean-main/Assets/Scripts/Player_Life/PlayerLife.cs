@@ -15,9 +15,9 @@ public class PlayerLife : MonoBehaviour
     public string[] trapses = { "Trap" };
     [SerializeField] private AudioSource die;
     private CoinCollectorScript coinCollectorScript;
+    [SerializeField] private AudioSource checkPoint;
+    private bool checkpointReached = false;
 
-
-    private bool isImmune = false;
 
     private void Start()
     {
@@ -75,10 +75,20 @@ public class PlayerLife : MonoBehaviour
         {
             respawnPoint = transform.position;
         }
+        if (collision.CompareTag("Checkpoint") && !checkpointReached)
+        {
+            checkpointReached = true;
+            respawnPoint = transform.position;
+
+            checkPoint.Play();
+            PlayerPrefs.SetInt("CheckpointReached", 1);
+            PlayerPrefs.Save();
+        }
     }
 
     private void Respawn()
     {
+        checkPoint.Stop();
         StartCoroutine(BecomeImmune(1f));
         transform.position = respawnPoint;
 
@@ -104,8 +114,8 @@ public class PlayerLife : MonoBehaviour
 
     private IEnumerator BecomeImmune(float immunityDuration)
     {
-        isImmune = true;
+      
         yield return new WaitForSeconds(immunityDuration);
-        isImmune = false;
+      
     }
 }

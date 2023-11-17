@@ -37,13 +37,27 @@ public class CoinCollectorScript : MonoBehaviour
     // Method to handle coin interaction when the player respawns
     public void HandleRespawn()
     {
-        // No need to reset interactability for already collected coins
+        // Check if all required coins have been collected before making buttons interactable
+        bool allCoinsCollected = true;
         foreach (Button button in buttonsToInteract)
         {
-            if (!button.interactable)
+            if (!collectedCoins.Contains(button.gameObject))
             {
-                button.interactable = true;
+                allCoinsCollected = false;
                 break;
+            }
+        }
+
+        // Make buttons interactable only if all required coins have been collected
+        if (allCoinsCollected)
+        {
+            foreach (Button button in buttonsToInteract)
+            {
+                if (!button.interactable)
+                {
+                    button.interactable = true;
+                    break;
+                }
             }
         }
     }
